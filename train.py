@@ -12,7 +12,6 @@ from torch import nn
 import os
 import numpy as np
 os.environ['CUDA_VISIBLE_DEVICES'] = '0,1'
-# device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 from visdom import Visdom
 from utils.visualization import summarize_performance, iter_summarize_performance
@@ -63,16 +62,11 @@ def main(args):
     vgg_loss = VGGLoss()
     hinge_loss = MyHingeLoss()
     
-    if train_config["is_official"]:
-        data_path = train_config["official_data_path"]
-        F_A_dataset = dataloader_official_version.Official_Fundus_angio_dataset(data_path)
-        F_A_dataloader = data.DataLoader(F_A_dataset, BATCHSIZE, shuffle=train_config['to_shuffle'])
-        val_dataloader = data.DataLoader(F_A_dataset, 1, shuffle=train_config['to_shuffle'])
-        val_iter = iter(val_dataloader)
-    else:
-        data_path = train_config['data_path']
-        F_A_dataset = forming_dataloader.Fundus_angio_dataset(data_path)
-        F_A_dataloader = data.DataLoader(F_A_dataset, BATCHSIZE, shuffle=train_config['to_shuffle'])
+    data_path = train_config["official_data_path"]
+    F_A_dataset = dataloader_official_version.Official_Fundus_angio_dataset(data_path)
+    F_A_dataloader = data.DataLoader(F_A_dataset, BATCHSIZE, shuffle=train_config['to_shuffle'])
+    val_dataloader = data.DataLoader(F_A_dataset, 1, shuffle=train_config['to_shuffle'])
+    val_iter = iter(val_dataloader)
         
     
     # since the official code doesn't use normal vision transformer, I provide a choice.
@@ -125,21 +119,9 @@ def main(args):
         for i in range(len_along_epoch):
             
             
-            if train_config["is_official"]:
-                iter_F_A = iter(F_A_dataloader)
-                
-            else:
-                datachoice = [0, 1]
-                ret = random.choice(datachoice)
-                X_realA, X_realB, X_realA_half, X_realB_half, is_nor = next(iter_F_A)[ret]
-            
-            
-            
-            
-            #need to remain that there exist batch dimension so that we take the first element of "is_nor"
-            
-            
-            
+            iter_F_A = iter(F_A_dataloader)
+                                        
+                                            
 #train the FINE descriminator------------------------------------------------------------ 
             for _ in range(2):
                 X_realA, X_realB, X_realA_half, X_realB_half, is_nor = next(iter_F_A)
