@@ -1,0 +1,6 @@
+__pycache__
+*.log
+test.py
+dataset
+cache.txt
+*.sh
