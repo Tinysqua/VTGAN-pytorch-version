@@ -1,9 +1,8 @@
 batchsize: 4
 epoch: 100
-official_data_path: "/home/fzj/VT_normal/dataset/data"
-data_path: "/home/fzj/try_transformer/VTGAN-pytorch-main/fundus&angio_dataset/data"
-test_dir: "/home/fzj/VT_normal/dataset/Dataset/ABNORMAL"
+official_data_path: "your_path/dataset/data"
+data_path: "your_path/fundus&angio_dataset/data"
+test_dir: "your_path/dataset/Dataset/ABNORMAL"
 to_shuffle: True
-is_official: True
 use_separable: False
 normal_vit: False
