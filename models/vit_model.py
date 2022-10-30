@@ -2,8 +2,6 @@ import torch.nn.functional as F
 import torch
 from einops import rearrange
 import os
-# os.environ['CUDA_VISIBLE_DEVICES'] = '0,1'
-# device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 class PatchEncoder(torch.nn.Module):
     def __init__(self, num_patches=64, projection_dim=64):
@@ -51,7 +49,7 @@ class Block(torch.nn.Module):
             x3 = self.mlp(x3)
             encoded_patches = x2 + x3
             feat.append(encoded_patches)
-        feat_total = torch.cat([feat[0], feat[1], feat[2], feat[3]], -1)
+        feat_total = [feat[0], feat[1], feat[2], feat[3]]
         return feat_total, encoded_patches
             
             
