@@ -43,7 +43,8 @@ if the program goes wrong, you can check the  report and install them.
 You can find the download link in the official code website
 
 ## Effect
-This is the effect after the models have been trained for 35 epochs, and it works really well
+This is the effect after the models have been trained for 35 epochs, and it works really well.
+
 From the left to the right, the first is the fundus, the second is the output of the model, the last one is the angio, groundtruth as well.
 #### Global
 ![35-global](/utils/35-global.jpg)
