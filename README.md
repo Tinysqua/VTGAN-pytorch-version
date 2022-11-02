@@ -36,6 +36,7 @@ https://ieeexplore.ieee.org/document/9607858
 - torchvision 0.13.0 
 - cu116
 - visdom 0.1.8.9
+
 Other pre-requisite like the PYYAML or scipy are connected to the package above, 
 if the program goes wrong, you can check the  report and install them.
 
