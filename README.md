@@ -40,7 +40,14 @@ Other pre-requisite like the PYYAML or scipy are connected to the package above,
 if the program goes wrong, you can check the  report and install them.
 
 ## Dataset
-you can find the download link in the official code website
+You can find the download link in the official code website
+
+## Effect
+This is the effect after the models have been trained for 35 epochs, and it works really well
+#### Global
+![35-global](/utils/35-global.jpg)
+#### Local
+![35-local](/utils/35-local.jpg)
 
 ## How to train
 ### 1. Dataset preparing
@@ -66,6 +73,6 @@ You can config your dataset path here. We recognize you to choose the "official_
 
 ### 3. Start training
 Since every choices is defined by yaml file, we can directily start training
-`python train.py
+```python train.py```
 
 
