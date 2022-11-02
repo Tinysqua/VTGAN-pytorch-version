@@ -27,7 +27,7 @@ def ef_loss_changed(y_true, y_pred):
     loss2 = l1(y_true[1], y_pred[1])
     loss3 = l1(y_true[2], y_pred[2])
     loss4 = l1(y_true[3], y_pred[3])
-    ef_loss = loss1+loss2+loss3+loss4
+    ef_loss = (loss1+loss2+loss3+loss4)/4
     return ef_loss
 
 def hinge_from_tf(pred, label):
