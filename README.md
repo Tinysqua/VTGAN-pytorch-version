@@ -54,7 +54,7 @@ From the left to the right, the first is the fundus, the second is the output of
 
 ## How to train
 ### 1. Dataset preparing
-We will use the paired images that being random_cropped by the official code. To do that, you should fistly download the dataset
+We will use the paired images that being random_cropped by the official code. To do that, you should firstly download the dataset
 and located them as the official website said:
 - Folder structure for data-preprocessing given below. Please make sure it matches with your local repository.
 ```
@@ -62,7 +62,7 @@ and located them as the official website said:
 |   ├──ABNORMAL
 |   ├──NORMAL
 ```
-- Then you will get a "data" directory
+- Then, after random_cropping, you will get a "data" directory
 ```
 ├── data
 |   ├──Images
