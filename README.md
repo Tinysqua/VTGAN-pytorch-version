@@ -72,7 +72,7 @@ it contains a lot of paired images, they will be used later
 
 ### 2. Change the train_config.yaml
 You could find it in the "config" directory, it contains some choices used in the training. 
-You can config your dataset path here. We recognize you to choose the "official_data_path", since the "data_path" could have some problem.
+You can config your dataset path here. We recommend you to choose the "official_data_path", since the "data_path" could have some problem.
 
 ### 3. Start training
 Since every choices is defined by yaml file, we can directily start training
